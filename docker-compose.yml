@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    depends_on:
+      - mariadb
+  
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    volumes:
+      - ./database/cptn.sql:/docker-entrypoint-initdb.d/cptn.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
