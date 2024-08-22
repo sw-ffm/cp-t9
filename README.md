@@ -11,3 +11,6 @@ T9 search for CP
 `docker compose up -d`\
 Open: http://localhost:8000
 
+## Tests
+
+./vendor/bin/pest
