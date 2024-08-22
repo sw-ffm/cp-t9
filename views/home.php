@@ -12,7 +12,7 @@
   <h1>CN T9 Search</h1>
   <form method="post">
     <label for="numbers">T9-Search-Form</label>
-    <input type="number" name="numbers" id="numbers" value="<?php print $_POST["numbers"] ?? "";?>">
+    <input type="number" name="numbers" id="numbers" value="<?php print htmlspecialchars($_POST["numbers"]) ?? "";?>">
     <button type="submit">GO</button>
   </form>
   
