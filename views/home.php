@@ -28,9 +28,9 @@
         <tbody>
         <?php foreach($result as $row): ?>
             <tr>
-                <td><?php print $row["surname"]; ?></td>
-                <td><?php print $row["name"]; ?></td>
-                <td><?php print $row["phone_number"]; ?></td>
+                <td><?php print htmlspecialchars($row["surname"]); ?></td>
+                <td><?php print htmlspecialchars($row["name"]); ?></td>
+                <td><?php print htmlspecialchars($row["phone_number"]); ?></td>
             </tr>
         <?php endforeach ?>
         </tbody>
