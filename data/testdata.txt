@@ -1,4 +1,0 @@
-Mustermann,Hubert,069/1234567
-Testfrau,Erika,+491751234567
-Schmidt,Otto,040-1234-567
-Rahmen,Nutzer,0049(0)151-1234567
