@@ -9,15 +9,15 @@ require ROOT_PATH . '/vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 
-use DI\ContainerBuilder;
+use DI\Container;
+use Stefan\CpTn\App;
+use Stefan\CpTn\Controller\Addressbook;
 
-$containerBuilder = new ContainerBuilder();
-$containerBuilder->addDefinitions( ROOT_PATH .'/config/container.php' );
-$container = $containerBuilder->build();
+$container = new Container();
 
 if(isset($_POST["numbers"])){
     
-    $app = $container->get('App');
+    $app = $container->get(App::class);
     $result = $app->performDatabaseSearch($_POST["numbers"]);
     sort($result);
 
@@ -25,7 +25,7 @@ if(isset($_POST["numbers"])){
 
 if(isset($_POST["newentry"])){
 
-    $addressbook = $container->get("Addressbook");
+    $addressbook = $container->get(Addressbook::class);
     $entryid = $addressbook->create();
     $success = "<div style=\"color:green;\"><b>SUCCESS:</b> Entry {$entryid} created!</div>";
 
