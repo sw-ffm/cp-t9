@@ -9,7 +9,7 @@ T9 search for CP
 
 ## Docker
 `docker compose up -d`\
-Open: http://localhost:8000
+http://localhost:8000
 
 ## Tests
 
