@@ -1,7 +1,7 @@
 <?php 
 
 $GLOBALS['keyassignments'] = require __DIR__ . '/../../config/keyassignments.php';
-$GLOBALS['tnine'] = new Stefan\CpTn\TNine($GLOBALS['keyassignments']);
+$GLOBALS['tnine'] = new Stefan\CpTn\TNine();
 
 describe('getPattern', function(){
 
