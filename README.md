@@ -6,3 +6,8 @@ T9 search for CP
 
 ## Key assignments
 /config/keyassignments.php
+
+## Docker
+`docker compose up -d`\
+Open: http://localhost:8000
+
