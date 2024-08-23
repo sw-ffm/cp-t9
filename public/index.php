@@ -10,8 +10,8 @@ $dotenv = Dotenv\Dotenv::createImmutable( ROOT_PATH );
 $dotenv->load();
 
 use DI\ContainerBuilder;
-use Stefan\CpTn\App;
-use Stefan\CpTn\Controller\Addressbook;
+use Stefan\CpTn\Controllers\HomeController;
+use Stefan\CpTn\Repositories\AddressbookRepository;
 
 $containerBuilder = new ContainerBuilder();
 $containerBuilder->addDefinitions( ROOT_PATH . '/config/container.php' );
@@ -19,7 +19,7 @@ $container = $containerBuilder->build();
 
 if(isset($_POST["numbers"])){
     
-    $app = $container->get(App::class);
+    $app = $container->get(HomeController::class);
     $result = $app->performDatabaseSearch($_POST["numbers"]);
     sort($result);
 
@@ -27,7 +27,7 @@ if(isset($_POST["numbers"])){
 
 if(isset($_POST["newentry"])){
 
-    $addressbook = $container->get(Addressbook::class);
+    $addressbook = $container->get(AddressbookRepository::class);
     $entryid = $addressbook->create();
     $success = "<div style=\"color:green;\"><b>SUCCESS:</b> Entry {$entryid} created!</div>";
 

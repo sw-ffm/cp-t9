@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Stefan\CpTn\Controller;
+namespace Stefan\CpTn\Repositories;
 use Stefan\CpTn\Database;
 
-class Addressbook 
+class AddressbookRepository
 {
     public function __construct(private Database $database)
     {

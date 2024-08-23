@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Stefan\CpTn;
+namespace Stefan\CpTn\Controllers;
 
 use PDO;
+use Stefan\CpTn\Database;
+use Stefan\CpTn\TNine;
 
-class App 
+class HomeController
 {
     public function __construct(private TNine $tnine, private Database $database)
     {
