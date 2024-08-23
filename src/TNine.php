@@ -9,11 +9,8 @@ class TNine
 
     private $pattern;
 
-    private $key_assignments;
-
-    public function __construct()
+    public function __construct(private array $key_assignments)
     {
-        $this->key_assignments = require __DIR__ . '/../config/keyassignments.php';
     }
         
     /**

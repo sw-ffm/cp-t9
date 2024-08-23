@@ -6,14 +6,16 @@ define("ROOT_PATH", dirname(__DIR__));
 
 require ROOT_PATH . '/vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv = Dotenv\Dotenv::createImmutable( ROOT_PATH );
 $dotenv->load();
 
-use DI\Container;
+use DI\ContainerBuilder;
 use Stefan\CpTn\App;
 use Stefan\CpTn\Controller\Addressbook;
 
-$container = new Container();
+$containerBuilder = new ContainerBuilder();
+$containerBuilder->addDefinitions( ROOT_PATH . '/config/container.php' );
+$container = $containerBuilder->build();
 
 if(isset($_POST["numbers"])){
     
